@@ -6,11 +6,7 @@ namespace GlassProspectus.Repository
 {
     public class UniDbContext : IdentityDbContext
     {
-        public UniDbContext(DbContextOptions<UniDbContext> options)
-            : base(options)
-        {
-
-        }
+        public UniDbContext(DbContextOptions<UniDbContext> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

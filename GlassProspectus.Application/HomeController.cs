@@ -10,7 +10,7 @@ namespace GlassProspectus.Application
             return "Index";
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin, Manager")]
         public string Authenticate()
         {
             return "Authenticated";
