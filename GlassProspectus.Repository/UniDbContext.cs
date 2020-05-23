@@ -17,11 +17,25 @@ namespace GlassProspectus.Repository
             base.OnModelCreating(builder);
 
             builder.Entity<IdentityUser>()
-                    .ToTable("Users")
-                    .Property(p => p.Id)
-                    .HasColumnName("UserId");
+                    .ToTable("Users");
 
-            builder.Entity<IdentityUserRole<>>().ToTable("MyUserRoles");
+            builder.Entity<IdentityUserRole<string>>()
+                    .ToTable("UserRoles");
+
+            builder.Entity<IdentityUserToken<string>>()
+                    .ToTable("UserTokens");
+
+            builder.Entity<IdentityUserClaim<int>>()
+                .ToTable("UserClaims");
+
+            builder.Entity<IdentityUserLogin<string>>()
+                    .ToTable("UserLogins");
+
+            builder.Entity<IdentityRole>()
+                    .ToTable("Roles");
+
+            builder.Entity<IdentityRoleClaim<int>>()
+                .ToTable("UserRoleClaims");
         }
     }
 }
