@@ -16,26 +16,21 @@ namespace GlassProspectus.Repository
         {
             base.OnModelCreating(builder);
 
-            builder.Entity<IdentityUser>()
-                    .ToTable("Users");
+            // Rename default 'AspNet' tables to remove the 'AspNet' bit e.g 'AspNetUsers' to 'Users'
 
-            builder.Entity<IdentityUserRole<string>>()
-                    .ToTable("UserRoles");
+            builder.Entity<IdentityUser>(entity => entity.ToTable(name: "Users"));
 
-            builder.Entity<IdentityUserToken<string>>()
-                    .ToTable("UserTokens");
+            builder.Entity<IdentityUserRole<string>>(entity => entity.ToTable(name: "UserRoles"));
 
-            builder.Entity<IdentityUserClaim<int>>()
-                .ToTable("UserClaims");
+            builder.Entity<IdentityRole>(entity => entity.ToTable(name: "Roles"));
 
-            builder.Entity<IdentityUserLogin<string>>()
-                    .ToTable("UserLogins");
+            builder.Entity<IdentityUserClaim<string>>(entity => entity.ToTable(name: "UserClaims"));
 
-            builder.Entity<IdentityRole>()
-                    .ToTable("Roles");
+            builder.Entity<IdentityUserLogin<string>>(entity => entity.ToTable(name: "UserLogins"));
 
-            builder.Entity<IdentityRoleClaim<int>>()
-                .ToTable("UserRoleClaims");
+            builder.Entity<IdentityRoleClaim<string>>(entity => entity.ToTable(name: "RoleClaims"));
+
+            builder.Entity<IdentityUserToken<string>>(entity => entity.ToTable(name: "UserTokens"));
         }
     }
 }
