@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlassProspectus.Application", "GlassProspectus.Application.csproj", "{6471D62B-41D6-47F1-B711-585187ABF07B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlassProspectus.Repository", "..\GlassProspectus.Repository\GlassProspectus.Repository.csproj", "{9FB2F65B-A6B7-4BDD-BAA5-12B0665BCF33}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6471D62B-41D6-47F1-B711-585187ABF07B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6471D62B-41D6-47F1-B711-585187ABF07B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6471D62B-41D6-47F1-B711-585187ABF07B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6471D62B-41D6-47F1-B711-585187ABF07B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FB2F65B-A6B7-4BDD-BAA5-12B0665BCF33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FB2F65B-A6B7-4BDD-BAA5-12B0665BCF33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FB2F65B-A6B7-4BDD-BAA5-12B0665BCF33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FB2F65B-A6B7-4BDD-BAA5-12B0665BCF33}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {29E81B80-98A5-44AC-8609-42D9362D920A}
+	EndGlobalSection
+EndGlobal
