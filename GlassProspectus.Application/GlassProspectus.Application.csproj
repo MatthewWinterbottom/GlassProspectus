@@ -12,11 +12,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GlassProspectus.Repository\GlassProspectus.Repository.csproj" />
+    <Folder Include="Views\Account\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Account\" />
+    <ProjectReference Include="..\GlassProspectus.Services\GlassProspectus.Services.csproj" />
   </ItemGroup>
 
 </Project>

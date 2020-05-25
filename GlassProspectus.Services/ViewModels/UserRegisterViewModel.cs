@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace GlassProspectus.Application.ViewModels
+namespace GlassProspectus.Services.ViewModels
 {
     public class UserRegisterViewModel
     {
