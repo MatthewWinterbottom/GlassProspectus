@@ -51,6 +51,9 @@ namespace GlassProspectus.Application
 
             services.AddAuthorization();
 
+            services.AddControllersWithViews();
+            services.AddRazorPages();
+
             services.ConfigureApplicationCookie(config =>
             {
                 config.LoginPath = "/Home/Index"; // Set a default path if a user is not authorised for the particular request
@@ -93,6 +96,7 @@ namespace GlassProspectus.Application
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
             });
 
             // Render out our react files

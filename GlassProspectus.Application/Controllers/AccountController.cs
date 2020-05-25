@@ -22,7 +22,7 @@ namespace GlassProspectus.Application.Controllers
 
         [HttpPost]
         [Route("Register")]
-        public async Task<bool> Register(UserRegisterViewModel user)
+        public async Task<bool> Register([Bind] UserRegisterViewModel user)
         {
             if (ModelState.IsValid)
             {

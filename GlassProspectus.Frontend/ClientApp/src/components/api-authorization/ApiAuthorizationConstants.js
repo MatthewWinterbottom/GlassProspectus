@@ -1,4 +1,4 @@
-export const ApplicationName = 'GlassProspectus.Frontend';
+export const ApplicationName = 'GlassProspectus.Application';
 
 export const QueryParameterNames = {
   ReturnUrl: 'returnUrl',

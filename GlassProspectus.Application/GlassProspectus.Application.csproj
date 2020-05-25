@@ -14,4 +14,8 @@
     <ProjectReference Include="..\GlassProspectus.Services\GlassProspectus.Services.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\Shared\" />
+  </ItemGroup>
+
 </Project>
