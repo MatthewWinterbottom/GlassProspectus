@@ -21,6 +21,8 @@ namespace GlassProspectus.Application
             services.AddDbContext<UniDbContext>( // Add a Db Context
                 options => options.UseSqlServer(config.GetConnectionString("UniDbConnection"))); // Set the connection string to the SQL server
 
+            services.AddMvc(); // Add MVC
+
             services.AddAuthentication(); // Add Authentication of Users
 
             services.AddAuthorization(); // Allow Authorisation of Users

@@ -15,4 +15,8 @@
     <ProjectReference Include="..\GlassProspectus.Repository\GlassProspectus.Repository.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Account\" />
+  </ItemGroup>
+
 </Project>
