@@ -1,5 +1,4 @@
-﻿using GlassProspectus.Repository;
-using GlassProspectus.Services.UserService.Interfaces;
+﻿using GlassProspectus.Services.UserService.Interfaces;
 using GlassProspectus.Services.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
@@ -8,17 +7,11 @@ namespace GlassProspectus.Services.UserService
 {
     public class UserService : IUserService
     {
-        private readonly UniDbContext uniDbContext;
         private readonly UserManager<IdentityUser> userManager;
-        private readonly SignInManager<IdentityUser> signInManager;
 
-        public UserService(UniDbContext uniDbContext,
-                           UserManager<IdentityUser> userManager,
-                           SignInManager<IdentityUser> signInManager)
+        public UserService(UserManager<IdentityUser> userManager)
         {
-            this.uniDbContext = uniDbContext;
             this.userManager = userManager;
-            this.signInManager = signInManager;
         }
 
         public async Task<bool> CreateUserAsync(IdentityUser user, string password)

@@ -1,19 +1,16 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace GlassProspectus.Application
 {
-    public class HomeController : Controller
+    [ApiController]
+    [Route("[controller]")]
+    public class HomeController : ControllerBase
     {
-        public string Index()
+        [HttpGet]
+        [Route("Get")]
+        public string Get()
         {
             return "Index";
-        }
-
-        [Authorize(Roles = "Admin, Manager")]
-        public string Authenticate()
-        {
-            return "Authenticated";
         }
     }
 }
