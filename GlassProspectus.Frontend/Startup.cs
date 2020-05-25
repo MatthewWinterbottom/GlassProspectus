@@ -36,8 +36,8 @@ namespace GlassProspectus.Frontend
             //services.AddIdentityServer()
             //    .AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
 
-            //services.AddAuthentication()
-            //    .AddIdentityServerJwt();
+            services.AddAuthentication()
+                .AddIdentityServerJwt();
 
             //services.AddControllersWithViews();
             //services.AddRazorPages();

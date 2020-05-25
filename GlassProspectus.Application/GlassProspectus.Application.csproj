@@ -5,10 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.4" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GlassProspectus.Frontend\GlassProspectus.Frontend.csproj" />
     <ProjectReference Include="..\GlassProspectus.Services\GlassProspectus.Services.csproj" />
   </ItemGroup>
 

@@ -1,12 +1,16 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using IdentityServer4.EntityFramework.Options;
+using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 namespace GlassProspectus.Repository
 {
-    public class UniDbContext : IdentityDbContext
+    public class UniDbContext : ApiAuthorizationDbContext<IdentityUser> //IdentityDbContext
     {
-        public UniDbContext(DbContextOptions<UniDbContext> options) : base(options) { }
+        public UniDbContext(DbContextOptions options,
+                            IOptions<OperationalStoreOptions> opertaionalStoreOptions)
+                                : base(options, opertaionalStoreOptions) { }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

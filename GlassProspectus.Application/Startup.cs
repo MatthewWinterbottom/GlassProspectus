@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Authentication;
 using System;
 using System.IO;
 
@@ -41,12 +42,16 @@ namespace GlassProspectus.Application
             services.AddDbContext<UniDbContext>( // Add a Db Context
                 options => options.UseSqlServer(config.GetConnectionString("UniDbConnection"))); // Set the connection string to the SQL server
 
-            services.AddAuthentication(); // Add Authentication of Users
+            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddEntityFrameworkStores<UniDbContext>();
 
-            services.AddAuthorization(); // Allow Authorisation of Users
+            services.AddIdentityServer()
+                .AddApiAuthorization<IdentityUser, UniDbContext>();
 
-            services.AddIdentity<IdentityUser, IdentityRole>() // Add Microsoft Identity so we can authenticate users and track them
-                .AddEntityFrameworkStores<UniDbContext>(); // Assign the Identity to user EFcore
+            services.AddAuthentication()
+                        .AddIdentityServerJwt(); // Add Authentication of Users
+
+            services.AddAuthorization();
 
             services.ConfigureApplicationCookie(config =>
             {
@@ -80,6 +85,8 @@ namespace GlassProspectus.Application
             app.UseRouting(); // We can route HTTP requests
 
             app.UseAuthentication(); // We can authenticate users when when mapping the HTTP requests
+
+            app.UseIdentityServer(); // Use identity Server
 
             app.UseAuthorization(); // We map requests using authorization (can they make requests to a particular endpoint)
 
