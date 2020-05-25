@@ -31,8 +31,6 @@ namespace GlassProspectus.Application
 
         public void ConfigureServices(IServiceCollection services) // Configure services for your container
         {
-            services.AddControllers(); // Use Controller in routing
-
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
